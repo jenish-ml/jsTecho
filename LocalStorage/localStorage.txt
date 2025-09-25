@@ -1,0 +1,35 @@
+🔹 What is LocalStorage?
+
+LocalStorage is a web storage API in JavaScript.
+It allows you to store key–value pairs in a web browser.
+Data stored in localStorage has no expiration time (it stays until deleted manually or by code).
+Data is saved per domain, so different websites cannot access each other’s storage.
+
+📒 LocalStorage Methods
+1. setItem(key, value)
+
+Stores data in localStorage.
+Value is always stored as a string.
+
+2. getItem(key)
+
+Retrieves the value associated with a given key.
+Returns null if the key does not exist.
+
+3. removeItem(key)
+
+Deletes a specific key and its value.
+
+4. clear()
+
+Removes all keys and values from localStorage.
+
+1️⃣ JSON.stringify()
+
+Use case: When you want to store objects or arrays in localStorage.
+Converts JavaScript object/array into a string.
+
+2️⃣ JSON.parse()
+
+Use case: When you want to retrieve an object or array from localStorage.
+Converts the string back into a JavaScript object/array.

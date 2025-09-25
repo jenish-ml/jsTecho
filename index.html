@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="script.js"></script>
+    <script src="variables.js"></script>
+    <script src="numbers.js"></script>
+  </head>
+  <body>
+    <input type="text" id="input1" placeholder="Enter a number" />
+    <button onclick="guess()">Guess</button>
+    <p id="result"></p>
+    <script>
+      guessnumber = Math.floor(Math.random() * 10);
+      console.log(mynumber);
+      function guess() {
+        var mynumber = document.getElementById("input1").value;
+        console.log(guessnumber);
+        console.log(mynumber);
+        if (guessnumber == mynumber) {
+          document.write(
+            "You guessed it right!",
+            guessnumber,
+            "is equal to",
+            mynumber
+          );
+        } else {
+          document.write("Try again!");
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: lightskyblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .form-box {
+        background-image: url(fo.jpg);
+        padding: 20px;
+        margin: 50px;
+        border-radius: 20px;
+        width: 220px;
+
+        border: 1px solid wheat;
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 15px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 14px;
+      }
+
+      input {
+        width: 100%;
+        padding: 7px;
+        margin-bottom: 12px;
+        border-radius: 3px;
+        border: 1px solid whitesmoke;
+        box-sizing: border-box;
+      }
+
+      button {
+        width: 100%;
+        padding: 9px;
+        border-radius: 10px;
+        border: none;
+        background: rgb(47, 131, 159);
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: cadetblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-box">
+      <h2>Register Here!</h2>
+      <label>Username:</label>
+      <input id="input1" type="text" placeholder="Username" />
+      <label>Password:</label>
+      <input id="input2" type="password" placeholder="Password" />
+      <button id="btn">Register</button>
+    </div>
+
+    <div class="form-box">
+      <h2>Welcome back!</h2>
+      <label>Username:</label>
+      <input id="input3" type="text" placeholder="Username" />
+      <label>Password:</label>
+      <input id="input4" type="password" placeholder="Password" />
+      <button id="btnn">Login</button>
+    </div>
+
+    <p id="rresult"></p>
+    <p id="rpresult"></p>
+    <p id="lresult"></p>
+    <p id="lpresult"></p>
+
+    <script>
+      document.getElementById("btn").addEventListener("click", function () {
+        var regname = document.getElementById("input1").value;
+        var regpassword = document.getElementById("input2").value;
+
+        if (regname && regpassword) {
+          alert("registration successful!");
+          document.getElementById("rresult").innerHTML = "Name:" + regname;
+          document.getElementById("rpresult").innerText = "password:" + regpassword;
+          
+        }
+        else {
+          alert("Please fill in all fields");
+        }
+        document.getElementById("btnn").addEventListener("click", function () {
+          var logname = document.getElementById("input3").value;
+          var logpassword = document.getElementById("input4").value;
+
+          if (logname === regname && logpassword === regpassword) {
+            document.getElementById("lresult").innerText = "Name:" + logname;
+            document.getElementById("lpresult").innerText = "password:" + logpassword;
+            alert("login successful!");
+          } else {
+            document.getElementById("lresult").innerText = "Name:" + logname;
+            document.getElementById("lpresult").innerText = "password:" + logpassword;
+            alert("Invalid name or password");
+          }
+            document.getElementById("input1").value = "";
+            document.getElementById("input2").value = "";
+            document.getElementById("input3").value = "";
+            document.getElementById("input4").value = "";
+
+        });
+      });
+    </script>
+  </body>
+</html>

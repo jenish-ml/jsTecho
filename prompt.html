@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let number=parseInt(prompt("enter the limit:"));
+        let a=0,b=1;
+        
+        for (let result=a+b; result <= number; result=a+b) {
+            if (a == 0){
+                console.log(a)
+            }
+            if (result == 1){
+                console.log(b)
+            }
+            console.log(result);
+            a=b;
+            b=result;
+        }
+    </script>
+</body>
+</html>

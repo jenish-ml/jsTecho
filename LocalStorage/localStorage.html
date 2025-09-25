@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LocalStorage Demo</title>
+</head>
+<body>
+  <h2>LocalStorage Example</h2>
+
+  <input type="text" id="nameInput" placeholder="Enter your name">
+  <button onclick="saveName()">Save</button>
+  <button onclick="getName()">Get</button>
+  <button onclick="removeName()">Remove</button>
+  <button onclick="clearAll()">Clear All</button>
+
+  <p id="output"></p>
+
+  <script>
+    function saveName() {
+      let name = document.getElementById("nameInput").value;
+      localStorage.setItem("username", name);
+      alert("Name saved!");
+    }
+
+    // Get from localStorage
+    function getName() {
+      let name = localStorage.getItem("username");
+      document.getElementById("output").innerText =
+        name ? "Stored Name: " + name : "No name found.";
+    }
+
+    // Remove single item
+    function removeName() {
+      localStorage.removeItem("username");
+      alert("Name removed!");
+    }
+
+    // Clear everything
+    function clearAll() {
+      localStorage.clear();
+      alert("All storage cleared!");
+    }
+  </script>
+</body>
+</html>

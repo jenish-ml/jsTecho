@@ -1,0 +1,121 @@
+📘 Git and GitHub Notes
+🔹 What is Git?
+
+Git is a distributed version control system used to track changes in source code during software development.
+Developed by Linus Torvalds in 2005 (creator of Linux).
+Allows multiple developers to collaborate without overwriting each other’s work.
+
+✨ Features of Git:
+
+Distributed: Every developer has a complete copy of the repository.
+Branching & Merging: Easy to create, switch, and merge branches.
+Lightweight: Fast performance.
+Version History: Keeps a detailed history of changes.
+
+🔹 What is GitHub?
+
+GitHub is a cloud-based platform for hosting Git repositories.
+Provides collaboration features like pull requests, issues, project boards.
+Owned by Microsoft.
+Alternatives: GitLab, Bitbucket.
+
+🔹 Common Git Terminology
+
+Repository (Repo): A folder containing project files + version history.
+Commit: A snapshot of changes in the repo.
+Branch: A separate line of development.
+Merge: Combining changes from different branches.
+Clone: Copy a remote repository to your local system.
+Fork: Copy someone else’s repo to your GitHub account.
+Pull Request (PR): Propose changes to someone else’s repo.
+Remote: The online version of a repo (e.g., on GitHub).
+
+📝 Git vs GitHub – Differences
+1. Definition
+
+Git → A distributed version control system (VCS) that tracks changes in code and allows collaboration.
+GitHub → A web-based hosting service for Git repositories with collaboration features.
+
+2. Nature
+
+Git → Tool/software installed on your local system.
+GitHub → Cloud platform that works online.
+
+3. Purpose
+
+Git → Helps manage source code versions locally (commit, branch, merge, revert).
+GitHub → Provides remote storage, sharing, and teamwork tools (pull requests, issues, project boards).
+
+4. Usage
+
+Git → Used through CLI (Command Line Interface) commands like git init, git commit.
+GitHub → Used via web interface, GUI, or integrated tools along with Git.
+
+5. Connectivity
+
+Git → Works offline (no internet needed).
+GitHub → Requires internet to sync and collaborate.
+
+6. Ownership
+
+Git → Open-source project maintained by the community.
+GitHub → Owned by Microsoft (since 2018).
+
+7. Features
+
+Git → Version tracking, branching, merging.
+GitHub → Adds features like:
+ - Pull Requests
+ - Code Review
+ - Issue Tracking
+ - CI/CD Integration (Continuous Integration/Continuous Deployment)
+ - Project Management
+
+
+📝 Git Working Commands
+
+1. Setup & Configuration
+
+git config --global user.email "your@email.com" → Set email
+git config --global user.name "Your Name" → Set username
+
+2. Repository Initialization
+
+git init → Initialize a new Git repository
+git clone <repo_url> → Copy (clone) an existing repository
+
+3. Checking Status
+
+git status → Show current changes and branch info
+
+4. Adding & Committing
+
+git add <filename> → Add a file to staging area
+git add . → Add all modified files
+git commit -m "message" → Save changes with a message
+
+5. Branching & Merging
+
+git branch → List branches
+git branch <branch_name> → Create new branch
+git checkout <branch_name> → Switch to a branch
+git merge <branch_name> → Merge a branch into current branch
+
+6. Remote Repository
+
+git remote add origin <repo_url> → Connect local repo to remote
+git push origin <branch_name> → Upload commits to GitHub
+git pull origin <branch_name> → Get updates from remote repo
+git fetch → Download changes but don’t merge yet
+
+7. Undo & Reset
+
+git log → View commit history
+git diff → Show changes in files
+git reset --hard <commit_id> → Reset repo to a previous commit
+git checkout -- <filename> → Discard local changes
+
+8. Ignoring Files
+
+git rm <filename> → Remove a file from repo
+git rm --cached <filename> → Remove a file from staging area

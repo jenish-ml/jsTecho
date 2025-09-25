@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let user = {
+        name: "Jenish",
+        age: 21,
+        skills: ["JavaScript", "Python", "Django"],
+      };
+
+      localStorage.setItem("user", JSON.stringify(user));
+      console.log("User saved to localStorage!", user);
+
+      let storedUser = localStorage.getItem("user");
+      console.log("Raw stored data:", storedUser);
+
+      let userObj = JSON.parse(storedUser);
+      console.log("Parsed object:", userObj);
+
+      console.log("Name:", userObj.name);
+      console.log("Age:", userObj.age);
+      console.log("Skills:", userObj.skills);
+    </script>
+  </body>
+</html>
