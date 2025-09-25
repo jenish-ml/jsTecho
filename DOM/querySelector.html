@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="queen" class="queen">Hello Queen</h1>
+    <p class="main-queen" id="main-queen">This is a Lord Majesty</p>
+    <p class="main-queen" id="main-queen1">This is a Wonder Woman</p>
+
+    <ul>
+        <li class="queen-item">Necklace</li>
+        <li class="queen-item">Crown</li>
+        <li class="queen-item">Ring</li>
+        <li class="queen-item">Pearl</li>
+    </ul>
+
+    <script>
+        let queen = document.querySelector("#main-queen1");
+        queen.innerHTML = "This is a BatMan";
+
+        let queenItems = document.querySelectorAll(".queen-item");
+        queenItems.forEach((item) => {
+            item.innerHTML = "Diamond";
+        })
+    </script>
+</body>
+</html>

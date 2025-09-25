@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Online Offline Example</title>
+</head>
+<body>
+  <h2>Network Status</h2>
+  <p id="status">Checking...</p>
+
+  <script>
+    const statusText = document.getElementById("status");
+    window.addEventListener("load", () => {
+      statusText.textContent = navigator.onLine ? "Online Aanu" : "Offline Aanu";
+      
+      // if (navigator.onLine) {
+      //   statusText.textContent = "Online Aanu";
+      // } else {
+      //   statusText.textContent = "Offline Aanu";
+      // }
+    })
+    window.addEventListener("online", () => {
+      statusText.textContent = "Online Aanu";
+    })
+    window.addEventListener("offline", () => {
+      statusText.textContent = "Offline Aanu";
+    })
+  </script>
+</body>
+</html>
+
+

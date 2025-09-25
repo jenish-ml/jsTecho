@@ -1,0 +1,21 @@
+What is Callback Hell?
+
+Callback Hell happens when callbacks are nested inside other callbacks multiple levels deep.
+This makes code hard to read, debug, and maintain.
+Usually seen when performing sequential async operations.
+
+Problems with Callback Hell
+
+Readability – Code looks messy ("pyramid structure").
+Maintainability – Hard to modify or add logic.
+Error Handling – Needs lots of checks.
+Scalability – Adding new async tasks makes it worse.
+
+Solutions to Callback Hell
+
+Modularize – Break into separate functions.
+Use Promises – Flatten structure with .then().
+Use Async/Await – Makes code look synchronous.
+
+What is the difference between callback hell and Promises?
+→ Callback hell is deeply nested callbacks; Promises flatten the structure.

@@ -1,0 +1,43 @@
+JavaScript Callback Functions - Notes
+
+1. What is a Callback Function?
+
+- A callback is a function passed as an argument to another function.
+- It is called (executed) after the completion of that function's operation.
+
+- Example:
+    function greet(name, callback) {-
+        console.log("Hello, " + name);
+        callback();
+    }
+    function sayBye() {
+        console.log("Goodbye!");
+    }
+    greet("Alice", sayBye);
+
+2. Advantages of Callback Functions:
+
+- Asynchronous Programming: Callbacks allow code to run after a task completes (e.g., after data loads).
+- Code Reusability: Functions can accept different callbacks for flexible behavior.
+- Event Handling: Used in event listeners (e.g., button clicks).
+- Modularity: Keeps code organized and modular.
+
+3. Why Choose Callback Functions?
+
+- To handle tasks that take time (like file reading, API calls) without blocking the main thread.
+- To execute code only after a certain operation finishes.
+- To customize behavior by passing different functions as callbacks.
+
+4. Common Use Cases:
+- setTimeout, setInterval
+- Array methods (map, filter, forEach)
+- Event listeners (addEventListener)
+- AJAX requests
+
+5. Example with setTimeout:
+    setTimeout(function() {
+        console.log("Executed after 2 seconds");
+    }, 2000);
+
+Summary:
+Callbacks are essential for asynchronous and event-driven programming in JavaScript, making code more flexible and efficient.

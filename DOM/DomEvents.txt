@@ -1,0 +1,64 @@
+1. Introduction to DOM Events
+Events are actions that happen in the browser, often triggered by the user or the browser itself. 
+Examples: clicking a button, pressing a key, submitting a form, the page finishing loading, etc. JavaScript can "listen" for these events and execute code in response.
+
+2. Event Handling
+There are three primary ways to handle events:
+HTML Attribute (Avoid): <button onclick="handleClick()">Click me</button>
+DOM Property: element.onclick = function() { ... }; (Only allows one handler per event).
+addEventListener() (BEST PRACTICE): Allows adding multiple listeners to one event.
+Syntax: element.addEventListener('eventName', callbackFunction);
+
+3. Common Event Types
+Mouse Events:
+click: Single click.
+dblclick: Double click.
+mouseover / mouseout: When the mouse enters/leaves an element.
+mousedown / mouseup: When the mouse button is pressed/released.
+
+Keyboard Events:
+keydown / keyup: When any key is pressed/released.
+keypress (Deprecated): When a key that produces a character is pressed.
+
+Form Events:
+submit: When a form is submitted.
+change: When the value of an input, select, or textarea changes and loses focus.
+input: Fires immediately after the value of an element changes.
+focus / blur: When an element gains/loses focus.
+
+Window Events:
+load: When the entire page (images, scripts) has finished loading.
+resize: When the browser window is resized.
+scroll: When the user scrolls.
+
+Multimedia Events:
+play, pause, ended: Fired by <video> and <audio> elements.
+
+4. Form Validation
+The process of ensuring user input is correct before it's sent to the server.
+Client-Side Validation: Done in the browser using JavaScript for a better user experience (instant feedback).
+
+Common Techniques:
+Check for empty required fields.
+Validate email format using Regular Expressions (Regex).
+Check input length.
+Use HTML5 form validation attributes (required, type="email", pattern).
+
+What is event.preventDefault()?
+
+It’s a method available on the event object.
+It stops the browser’s default action for a particular event.
+
+Example:
+Submitting a form normally refreshes/reloads the page.
+Clicking a link <a> usually navigates to another page.
+With preventDefault(), you can stop those defaults and handle the behavior yourself.
+
+🔹 Important Event Properties
+
+event.type  -  Type of event (click, submit, etc.)
+event.target  -  The element that triggered the event
+event.currentTarget  -  The element the handler is attached to
+event.key  -  Key pressed (for keyboard events)
+event.code  -  Physical key on keyboard
+event.button  -  Mouse button pressed (0=left, 1=middle, 2=right)

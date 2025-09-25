@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Callback Function Example</title>
+</head>
+<body>
+    <script>
+        function processInput(input, callback) {
+            let result;
+            if (typeof input === 'number') {
+                result = input * 2;
+            } else {
+                result = 'Invalid input';
+            }
+            callback(result);
+        }
+        processInput(5, function(result) {
+            console.log('Processed result:', result); 
+        });
+
+        processInput('hello', function(result) {
+            console.log('Processed result:', result); 
+        });
+    </script>
+</body>
+</html>

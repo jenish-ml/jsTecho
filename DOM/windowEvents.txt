@@ -1,0 +1,30 @@
+📘 Explanation Notes on Window Events
+
+1. load
+Fired when the whole page (HTML + CSS + images + scripts) is fully loaded.
+Example use: show a welcome message, run setup code.
+
+2. beforeunload
+Triggered just before the user leaves/reloads the page.
+You can display a confirmation dialog.
+Example: prevent data loss (like when filling forms).
+
+3. resize
+Fired when the browser window size changes.
+Example: responsive UI adjustments.
+
+4. scroll
+Fired when the page is scrolled.
+Example: infinite scrolling, sticky headers.
+
+5. focus
+Fired when the window/tab gains focus (user clicks back into the page).
+Example: resume activity, play notifications.
+
+6. blur
+Fired when the window/tab loses focus (user clicks another tab).
+Example: pause video, save data automatically.
+
+7. DOMContentLoaded
+Fired when HTML is completely loaded and parsed, before images/styles are fully loaded.
+Example: safe place to manipulate DOM elements quickly.

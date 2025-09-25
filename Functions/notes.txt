@@ -1,0 +1,152 @@
+JavaScript Functions Notes
+
+1. What is a Function?
+A function is a reusable block of code that performs a specific task.
+
+2. Function Declaration
+Syntax:
+function functionName(parameters) {
+    // code to execute
+}
+Example:
+function greet(name) {
+    console.log("Hello, " + name);
+}
+greet("Alice"); // Output: Hello, Alice
+
+3. Function Expression
+A function can be assigned to a variable.
+Example:
+const add = function(a, b) {
+    return a + b;
+};
+console.log(add(2, 3)); // Output: 5
+
+4. Arrow Functions (ES6)
+Shorter syntax for writing functions.
+Example:
+const multiply = (x, y) => x * y;
+console.log(multiply(4, 5)); // Output: 20
+
+5. Anonymous Functions
+Functions without a name, often used as arguments.
+Example:
+setTimeout(function() {
+    console.log("Executed after 1 second");
+}, 1000);
+
+6. Callback Functions
+A function passed as an argument to another function.
+Example:
+function processUserInput(callback) {
+    const name = "Bob";
+    callback(name);
+}
+processUserInput(function(name) {
+    console.log("Hello " + name);
+});
+
+7. Parameters and Arguments
+Parameters are variables listed in function definition; arguments are values passed to the function.
+Example:
+function sum(a, b) { // a, b are parameters
+    return a + b;
+}
+sum(1, 2); // 1, 2 are arguments
+
+8. Return Statement
+Functions can return a value using return.
+Example:
+function square(x) {
+    return x * x;
+}
+console.log(square(6)); // Output: 36
+
+9. Default Parameters
+Assign default values to parameters.
+Example:
+function greet(name = "Guest") {
+    console.log("Hello, " + name);
+}
+greet(); // Output: Hello, Guest
+
+10. Rest Parameters
+Allows a function to accept any number of arguments.
+Example:
+function sumAll(...numbers) {
+    return numbers.reduce((a, b) => a + b, 0);
+}
+console.log(sumAll(1, 2, 3, 4)); // Output: 10
+
+11. Immediately Invoked Function Expression (IIFE)
+A function that runs as soon as it is defined.  
+Example:
+(function() {
+    console.log("IIFE executed");
+})();
+
+12. Recursive Functions
+A function that calls itself.
+Example:
+function factorial(n) {
+    if (n === 0) return 1;
+    return n * factorial(n - 1);
+}
+console.log(factorial(5)); // Output: 120
+
+13. Function Scope
+Variables declared inside a function are local to that function.
+Example:
+function testScope() {
+    let x = 10;
+    console.log(x); // Output: 10
+}
+console.log(x); // Error: x is not defined
+
+14. Hoisting
+Function declarations are hoisted, function expressions are not.
+Example:
+hoisted(); // Works
+function hoisted() {
+    console.log("Hoisted!");
+}
+
+notHoisted(); // Error
+const notHoisted = function() {
+    console.log("Not hoisted!");
+};
+
+
+Summary:
+- Functions are fundamental in JS for code reuse and organization.
+- Use function declarations, expressions, arrow functions as needed.
+- Understand scope, parameters, return values, and advanced features like callbacks and recursion.
+
+
+Features and Advantages of JavaScript Functions:
+
+Features:
+- Reusability: Functions allow you to reuse code blocks, reducing duplication.
+- Modularity: Functions help organize code into logical sections, making it easier to manage.
+- Parameters: Functions can accept parameters, enabling dynamic behavior.
+- Return Values: Functions can return values, allowing data to be passed back to the caller.
+- Scope Control: Functions create local scope for variables, preventing conflicts.
+- First-Class Citizens: Functions can be assigned to variables, passed as arguments, and returned from other functions.
+- Support for Recursion: Functions can call themselves for complex tasks.
+- Anonymous and Arrow Functions: JavaScript supports anonymous functions and concise arrow function syntax.
+
+Advantages:
+- Improved Code Organization: Functions break complex problems into smaller, manageable pieces.
+- Easier Maintenance: Changes can be made in one place and reflected wherever the function is used.
+- Enhanced Readability: Named functions make code easier to read and understand.
+- Promotes DRY Principle: "Don't Repeat Yourself" by reusing function logic.
+- Facilitates Testing: Functions can be tested individually for correctness.
+- Enables Asynchronous Programming: Functions (callbacks, promises, async/await) help handle asynchronous operations.
+
+Difference between Parameter and Argument:
+
+- Parameter: A variable defined in the function declaration. It acts as a placeholder for the value that will be passed to the function.
+    Example: In `function greet(name) { ... }`, `name` is a parameter.
+
+- Argument: The actual value supplied to the function when it is called.
+    Example: In `greet("Alice")`, `"Alice"` is the argument.

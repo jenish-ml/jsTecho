@@ -1,0 +1,44 @@
+FetchAPI Notes
+
+1. What is an API?
+
+API stands for Application Programming Interface.
+It is a set of rules and protocols that define how different software components communicate with each other.
+
+2. Why Use APIs?
+
+- APIs enable different software applications to communicate with each other.
+- They allow developers to access data from external sources, such as databases, APIs, or web services.
+- APIs simplify the integration of different systems and services.
+
+
+1. What is Fetch API?
+
+- Fetch API is a modern way to make HTTP requests in JavaScript.
+- It allows you to fetch data from a server and handle responses.
+
+2. Why Use Fetch API?
+
+- Fetch API simplifies the process of making HTTP requests.
+- It provides a consistent way to fetch data from different sources.
+- It supports various request methods (GET, POST, PUT, DELETE) and headers.
+
+3. How to Use Fetch API?
+
+- Use the fetch() function to make a request.
+- Pass the URL as an argument.
+- Handle the response using .then() and .catch() methods.
+
+4. fetch api steps to use
+
+1. import fetch from 'node-fetch';
+
+2. fetch('https://api.example.com/data')
+.then(response => response.json())
+.then(data => {
+    // Do something with the data
+})
+.catch(error => {
+    // Handle any errors
+})
+

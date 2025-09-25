@@ -1,0 +1,15 @@
+Form Get and Post Methods
+-------------------------
+
+1. GET Method
+The GET method is used to retrieve data from a server.
+It sends the data in the URL as a query string.
+
+2. POST Method
+The POST method is used to send data to a server.
+It sends the data in the request body.
+
+3. Difference between GET and POST
+
+- GET: Data is sent in the URL as a query string.
+- POST: Data is sent in the request body.

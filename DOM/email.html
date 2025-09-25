@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+
+</head>
+<body>
+    <h1>Email send Using EmailJS</h1>
+    <form action="" id="form">
+    <input type="text" name="name" id="name" placeholder="Name">
+    <input type="text" name="email" id="email" placeholder="Email">
+    <input type="text" name="message" id="message" placeholder="Message">
+    <input type="button" value="Send" id="send" onclick="sendMail()">
+    </form>
+
+    <script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "bRusMAZq6DvPHTLmq",
+      });
+   })();
+
+
+    function sendMail(){
+        let params = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            message: document.getElementById("message").value
+        }
+
+       emailjs.send('service_5qa9p3l', 'template_cwyvtgp', params).then(
+        (response) => {
+            console.log('SUCCESS!', response.status, response.text);
+        },
+        (error) => {
+            console.log('FAILED...', error);    
+        },
+        );
+        
+    }
+
+</script>
+    
+</body>
+</html>

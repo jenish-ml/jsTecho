@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Callback Function Example</title>  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <h2>Callback Function Example in JavaScript</h2>
+  <button id="fetchBtn">Fetch Data</button>
+  <div id="result"></div>
+
+  <script>
+    function fetchData(callback) {
+      document.getElementById("result").textContent = "Fetching data...";
+
+      setTimeout(() => {
+        const data = { name: "Jenish", role: "Web Developer", location: "Kerala" };
+    
+        callback(data);
+      }, 2000); 
+    }
+
+    // Callback function to display data
+    function displayData(user) {
+      document.getElementById("result").textContent = 
+        `Name: ${user.name}, Role: ${user.role}, Location: ${user.location}`;
+    }
+
+    // Button click event
+    document.getElementById("fetchBtn").addEventListener("click", function() {
+      fetchData(displayData);
+    });
+  </script>
+</body>
+</html>

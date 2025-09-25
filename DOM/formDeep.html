@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Events in JavaScript</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            margin-top: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #fff;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        h2 {
+            color: #2575fc;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #6a11cb;
+            padding-bottom: 8px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #444;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            border-color: #6a11cb;
+            outline: none;
+        }
+        
+        button {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .event-log {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid #e9ecef;
+        }
+        
+        .event-item {
+            padding: 8px 12px;
+            margin-bottom: 8px;
+            background: white;
+            border-left: 4px solid #6a11cb;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .event-item:nth-child(even) {
+            background: #f3f4f6;
+        }
+        
+        .highlight {
+            background-color: #fff8e1;
+            border: 2px solid #ffd54f;
+        }
+        
+        .error {
+            color: #d32f2f;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        
+        .success {
+            color: #388e3c;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Form Events in JavaScript</h1>
+    
+    <div class="container">
+        <div class="two-column">
+            <div>
+                <h2>Form Elements</h2>
+                
+                <div class="form-group">
+                    <label for="name">Name (focus/blur):</label>
+                    <input type="text" id="name" placeholder="Enter your name">
+                    <div id="name-error" class="error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email (input/change):</label>
+                    <input type="email" id="email" placeholder="Enter your email">
+                    <div id="email-status"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="country">Country (change):</label>
+                    <select id="country">
+                        <option value="">Select a country</option>
+                        <option value="usa">United States</option>
+                        <option value="canada">Canada</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="australia">Australia</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message (keyboard events):</label>
+                    <textarea id="message" placeholder="Type your message" rows="4"></textarea>
+                    <div id="char-count">Characters: 0</div>
+                </div>
+                
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="newsletter"> Subscribe to newsletter (change)
+                    </label>
+                </div>
+                
+                <button id="submit-btn">Submit Form</button>
+                <button id="reset-btn" type="button">Reset Form</button>
+            </div>
+            
+            <div>
+                <h2>Event Log</h2>
+                <div class="event-log" id="event-log">
+                    <div class="event-item">Events will appear here...</div>
+                </div>
+                
+                <h2>Form Event Notes</h2>
+                <ul style="list-style-type: none; padding: 0;">
+                    <li class="event-item"><strong>focus</strong> - When an element receives focus</li>
+                    <li class="event-item"><strong>blur</strong> - When an element loses focus</li>
+                    <li class="event-item"><strong>input</strong> - When the value of an input changes</li>
+                    <li class="event-item"><strong>change</strong> - When the value changes and element loses focus</li>
+                    <li class="event-item"><strong>submit</strong> - When a form is submitted</li>
+                    <li class="event-item"><strong>reset</strong> - When a form is reset</li>
+                    <li class="event-item"><strong>keydown</strong> - When a key is pressed down</li>
+                    <li class="event-item"><strong>keyup</strong> - When a key is released</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get DOM elements
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const countrySelect = document.getElementById('country');
+        const messageTextarea = document.getElementById('message');
+        const newsletterCheckbox = document.getElementById('newsletter');
+        const submitButton = document.getElementById('submit-btn');
+        const resetButton = document.getElementById('reset-btn');
+        const eventLog = document.getElementById('event-log');
+        const nameError = document.getElementById('name-error');
+        const emailStatus = document.getElementById('email-status');
+        const charCount = document.getElementById('char-count');
+        
+        // Log events to the event log
+        function logEvent(event) {
+            const now = new Date();
+            const timeString = now.toTimeString().split(' ')[0];
+            const eventItem = document.createElement('div');
+            eventItem.className = 'event-item';
+            eventItem.textContent = `${timeString} - ${event.type} event on ${event.target.id || event.target.type}`;
+            eventLog.prepend(eventItem);
+            
+            // Keep only the last 10 events
+            if (eventLog.children.length > 10) {
+                eventLog.removeChild(eventLog.lastChild);
+            }
+        }
+        
+        // 1. Focus and Blur events
+        nameInput.addEventListener('focus', function(event) {
+            logEvent(event);
+            this.classList.add('highlight');
+            nameError.textContent = '';
+        });
+        
+        nameInput.addEventListener('blur', function(event) {
+            logEvent(event);
+            this.classList.remove('highlight');
+            
+            // Simple validation
+            if (this.value.length < 2) {
+                nameError.textContent = 'Name must be at least 2 characters long';
+            }
+        });
+        
+        // 2. Input and Change events
+        emailInput.addEventListener('input', function(event) {
+            logEvent(event);
+            
+            // Simple email validation
+            if (this.value.includes('@')) {
+                emailStatus.textContent = 'Email format looks good!';
+                emailStatus.className = 'success';
+            } else if (this.value.length > 0) {
+                emailStatus.textContent = 'Email should contain @ symbol';
+                emailStatus.className = 'error';
+            } else {
+                emailStatus.textContent = '';
+            }
+        });
+        
+        emailInput.addEventListener('change', function(event) {
+            logEvent(event);
+            // This fires when the input loses focus and the value has changed
+        });
+        
+        // 3. Change event for select
+        countrySelect.addEventListener('change', function(event) {
+            logEvent(event);
+            alert(`You selected: ${this.options[this.selectedIndex].text}`);
+        });
+        
+        // 4. Change event for checkbox
+        newsletterCheckbox.addEventListener('change', function(event) {
+            logEvent(event);
+            if (this.checked) {
+                alert('Thank you for subscribing to our newsletter!');
+            }
+        });
+        
+        // 5. Keyboard events
+        messageTextarea.addEventListener('keydown', function(event) {
+            logEvent(event);
+        });
+        
+        messageTextarea.addEventListener('keyup', function(event) {
+            logEvent(event);
+            charCount.textContent = `Characters: ${this.value.length}`;
+            
+            // Limit to 100 characters
+            if (this.value.length > 100) {
+                this.value = this.value.substring(0, 100);
+                charCount.innerHTML = 'Characters: 100 <span class="error">(Maximum reached)</span>';
+            }
+        });
+        
+        // 6. Submit event (using button click for demonstration)
+        submitButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            logEvent(event);
+            
+            // Validate form
+            let isValid = true;
+            
+            if (nameInput.value.length < 2) {
+                nameError.textContent = 'Please enter a valid name';
+                isValid = false;
+            }
+            
+            if (!emailInput.value.includes('@')) {
+                emailStatus.textContent = 'Please enter a valid email';
+                emailStatus.className = 'error';
+                isValid = false;
+            }
+            
+            if (isValid) {
+                alert('Form submitted successfully!');
+                // In a real application, you would submit the form data to a server here
+            } else {
+                alert('Please fix the errors in the form');
+            }
+        });
+        
+        // 7. Reset button
+        resetButton.addEventListener('click', function() {
+            nameInput.value = '';
+            emailInput.value = '';
+            countrySelect.selectedIndex = 0;
+            messageTextarea.value = '';
+            newsletterCheckbox.checked = false;
+            nameError.textContent = '';
+            emailStatus.textContent = '';
+            charCount.textContent = 'Characters: 0';
+            
+            // Create a custom reset event for logging
+            const resetEvent = new Event('reset');
+            resetEvent.target = resetButton;
+            logEvent(resetEvent);
+            
+            alert('Form has been reset!');
+        });
+    </script>
+</body>
+</html>

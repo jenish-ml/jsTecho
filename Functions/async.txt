@@ -1,0 +1,16 @@
+What is Async/Await?
+
+ - async and await are syntactic sugar built on top of Promises (introduced in ES2017/ES8).
+ - They make asynchronous code look and behave like synchronous code, improving readability and maintainability.
+
+async Function
+
+Declares a function as asynchronous.
+Always returns a Promise (implicitly).
+If you return a value, it gets wrapped inside a Promise.
+
+await Keyword
+
+Can only be used inside an async function.
+Pauses the execution until the Promise is resolved/rejected.
+Makes async code look synchronous.

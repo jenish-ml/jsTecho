@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello Queen</h1>
+    <p>Queen is Aleena Tom</p>
+
+    <script>
+        let h1 =  document.getElementsByTagName("h1")[0];
+        let h3 = document.createElement("h3");
+        let p = document.querySelector("p");
+        h3.textContent = "Welcome Queen";
+        document.body.insertBefore(h3,p);
+        document.body.removeChild(h1);
+    </script>
+</body>
+</html>

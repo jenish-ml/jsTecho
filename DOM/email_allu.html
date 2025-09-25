@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+</head>
+<body>
+
+     <form action="post">
+        <label>username</label>
+        <input type="text" id="username"  name="username" placeholder="username"><br><br>
+        <label >Email</label>
+        <input type="email" id="email" name="email" placeholder="email"><br><br>
+        <label>message</label>
+        <input type="text" id="message" name="message" placeholder="message"><br><br>
+        <input type="button" id="submit" value="submit" onclick="formSubmit(event)">
+        
+    </form>
+
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+              publicKey: "D-EzyEu3LZYdFgsqQ",
+            });
+        })();
+
+    function formSubmit(event) {
+    event.preventDefault();
+    let parameters = {
+        username:document.getElementById("username").value,
+        email:document.getElementById("email").value,
+        message:document.getElementById("message").value
+    }
+    //emailjs.sendForm('service_c5rjv4q', 'template_ux66d5f', this);
+    emailjs.sendForm('service_c5rjv4q', 'template_ciaeiro', document.querySelector("form"));
+
+    }
+    </script>
+
+
+
+
+</body>
+</html>

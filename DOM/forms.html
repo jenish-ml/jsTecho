@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Form Validation (Focusout)</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .error {
+        color: red;
+        font-size: 14px;
+      }
+      .success {
+        color: green;
+        font-size: 14px;
+      }
+      input {
+        margin-bottom: 8px;
+      }
+    </style>
+  </head>
+  <body class="container">
+    <h2 class="text-center">Form Validation (on focusout)</h2>
+
+    <form id="myForm" class="mt-5 border border-dark p-5">
+      <div id="message" class="alert alert-danger d-none"></div>
+
+      <label>Email:</label>
+      <input type="text" id="email" class="form-control" />
+      <span id="emailError" class="error"></span><br />
+
+      <label>Username:</label>
+      <input type="text" id="username" class="form-control" />
+      <span id="usernameError" class="error"></span><br />
+
+      <label>DOB:</label>
+      <input type="date" id="dob" class="form-control" />
+      <span id="dobError" class="error"></span><br />
+
+      <label>Phone:</label>
+      <input type="number" id="phone" class="form-control" />
+      <span id="phoneError" class="error"></span><br />
+
+      <label>Password:</label>
+      <input type="password" id="password" class="form-control" />
+      <span id="passError" class="error"></span><br />
+
+      <label>Confirm Password:</label>
+      <input type="password" id="confirmPassword" class="form-control" />
+      <span id="confirmError" class="error"></span><br />
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary mt-3 w-25">Submit</button>
+      </div>
+    </form>
+
+    <script>
+      const form = document.getElementById("myForm");
+      const message = document.getElementById("message");
+
+      // Validation rules
+      const rules = {
+        email: (val) =>!val? "Email is required": !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)? "Invalid email format": "✔ Valid email",
+
+        username: (val) =>
+          !val
+            ? "Username is required"
+            : val.length < 6
+            ? "Username must be at least 6 characters"
+            : "✔ Valid username",
+
+        dob: (val) =>
+          !val
+            ? "DOB is required"
+            : new Date(val) > new Date()
+            ? "Invalid DOB"
+            : "✔ Valid DOB",
+
+        phone: (val) =>
+          !val
+            ? "Phone number is required"
+            : val.length !== 10
+            ? "Invalid phone number"
+            : "✔ Valid phone number",
+
+        password: (val) =>
+          !val
+            ? "Password is required"
+            : val.length < 6
+            ? "Password must be at least 6 characters"
+            : "✔ Strong password",
+
+        confirmPassword: (val) =>
+          !val
+            ? "Confirm password is required"
+            : val !== document.getElementById("password").value
+            ? "Passwords do not match"
+            : "✔ Passwords match",
+      };
+
+      // Attach focusout validation dynamically
+      Object.keys(rules).forEach((id) => {
+        const input = document.getElementById(id);
+        input.addEventListener("focusout", () => {
+          const msg = rules[id](input.value);
+          const span = document.getElementById(id + "Error");
+          span.textContent = msg;
+          span.className = msg.startsWith("✔") ? "success" : "error";
+        });
+      });
+
+      // Final form validation on submit
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        let valid = true;
+
+        Object.keys(rules).forEach((id) => {
+          const input = document.getElementById(id);
+          const msg = rules[id](input.value);
+          const span = document.getElementById(id + "Error");
+          span.textContent = msg;
+          span.className = msg.startsWith("✔") ? "success" : "error";
+          if (!msg.startsWith("✔")) valid = false;
+        });
+
+        if (!valid) {
+          message.textContent = "Please fix the errors before submitting.";
+          message.classList.remove("d-none");
+        } else {
+          message.textContent = "Form submitted successfully!";
+          message.classList.remove("d-none");
+          message.className = "alert alert-success";
+          console.log(
+            "Form Data:",
+            Object.fromEntries(new FormData(form).entries())
+          );
+        }
+      });
+    </script>
+  </body>
+</html>

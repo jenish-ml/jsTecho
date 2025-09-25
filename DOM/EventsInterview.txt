@@ -1,0 +1,53 @@
+=============================================
+WINDOW EVENTS
+=============================================
+
+Q1: What is the difference between the 'load' and 'DOMContentLoaded' events?
+A: The 'DOMContentLoaded' event fires when the HTML document is completely parsed and the DOM is built, without waiting for stylesheets, images, and subframes to finish loading. The 'load' event fires when the entire page, including all dependent resources, has fully loaded.
+
+Q2: When would you use the beforeunload event?
+A: The beforeunload event is used to show a confirmation dialog when the user attempts to leave the page, warning them about unsaved changes or ongoing processes. This is commonly used in web applications with form data that hasn't been saved.
+
+Q3: How would you handle window resizing in a responsive design?
+A: I would use the resize event to detect window size changes and then adjust the layout, recalculate element dimensions, or load different content as needed. To optimize performance, I might implement debouncing to limit how frequently the resize handler executes.
+
+Q4: What is the purpose of the hashchange event?
+A: The hashchange event fires when the URL hash fragment (the part after the # symbol) changes. It's commonly used in single-page applications to handle navigation without full page reloads.
+
+=============================================
+MULTIMEDIA EVENTS
+=============================================
+
+Q1: Which event would you use to update a progress bar for a video?
+A: The timeupdate event, which fires periodically as the media plays, is ideal for updating progress bars as it provides regular updates about the current playback position.
+
+Q2: How would you implement custom controls for a video element?
+A: I would use the play(), pause(), and other methods of the media element API, and attach event listeners to events like play, pause, timeupdate, and volumechange to keep the custom controls synchronized with the media element's state.
+
+Q3: What events would you monitor to handle buffering in a video player?
+A: I would monitor the waiting event (which fires when playback stops due to buffering) and the canplay event (which fires when enough data is available to resume playback). The progress event can also provide information about how much media has been buffered.
+
+Q4: How would you handle errors in media playback?
+A: I would attach an error event listener to the media element and check the error property of the element to determine the specific error that occurred, then provide appropriate feedback to the user.
+
+=============================================
+FORM VALIDATION
+=============================================
+
+Q1: What are the advantages of HTML5 form validation over custom JavaScript validation?
+A: HTML5 validation provides built-in browser support, requires less code, offers consistent patterns across browsers, provides automatic focus on invalid fields, and works even when JavaScript is disabled. However, it's less customizable than JavaScript validation.
+
+Q2: How would you implement real-time validation as a user types?
+A: I would use the input event to validate fields as the user types, providing immediate feedback. For better performance with validation that might be computationally expensive, I might use debouncing to limit how frequently validation occurs.
+
+Q3: What is the Constraint Validation API?
+A: The Constraint Validation API is a set of JavaScript methods and properties that help with form validation, including checkValidity(), setCustomValidity(), validity, and validationMessage properties. It allows developers to customize the browser's built-in validation system.
+
+Q4: How would you create a custom validation pattern for a specific input format?
+A: I would use the pattern attribute with a regular expression for simple cases, or for more complex validation, I would use JavaScript to implement custom validation logic and use setCustomValidity() to provide custom error messages.
+
+Q5: How would you handle form validation in a multi-step form?
+A: I would validate each step before allowing the user to proceed to the next one, providing immediate feedback on the current step's fields. I would also perform final validation on submission to ensure all data is correct.
+
+Q6: What techniques would you use to improve the user experience of form validation?
+A: I would provide clear, specific error messages near the relevant fields, use visual cues (colors, icons) to indicate valid/invalid fields, focus on the first invalid field, validate in real-time as the user types, and offer suggestions for correcting errors when possible.

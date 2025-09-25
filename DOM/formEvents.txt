@@ -1,0 +1,51 @@
+Form Events
+
+submit: When a form is submitted.
+change: When the value of an input, select, or textarea changes and loses focus.
+input: Fires immediately after the value of an element changes.
+focus / blur: When an element gains/loses focus.
+
+
+Difference Between input and change Events in JavaScript
+
+input Event
+
+Fires immediately whenever user types, deletes, or modifies the field.
+Works continuously while editing.
+Best for live validation (e.g., password strength, character counter).
+Supported by: <input>, <textarea>, <select>.
+
+change Event
+
+Fires only when the element loses focus and the value has been changed.
+Does not trigger on every keystroke.
+Good for final validation (after user finishes typing) or when choosing from dropdowns/checkboxes.
+Works with <input>, <textarea>, <select>, checkboxes, radio buttons.
+
+
+📌 event.preventDefault() in JavaScript
+🔹 Definition
+
+preventDefault() is a method of the Event object in JavaScript.
+
+It is used to stop the browser’s default action that normally happens when an event is triggered.
+
+Example of default actions:
+    Clicking a link (<a>) → navigates to another page
+    Submitting a form (<form>) → reloads the page and sends data
+    Pressing a spacebar key → scrolls the pag
+
+🔹Syntax
+event.preventDefault();
+
+What is focus in JavaScript?
+
+- Focus means an element (like an input box, textarea, or button) is active and ready to receive input from the user.
+- When you click inside a text box or use the Tab key to move into it → that element gets focus.
+- Only one element at a time can have focus on a page.
+
+What is blur?
+
+- The blur event happens when an element loses focus.
+- In other words, if you click inside the input field (focus), and then click outside it, the blur event is triggered.
+

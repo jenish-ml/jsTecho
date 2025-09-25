@@ -1,0 +1,37 @@
+📘 Explanation Notes on Multimedia Events
+
+play
+This event happens when the media (audio/video) starts playing.
+👉 Example: start showing a “Now Playing” message.
+
+pause
+This event happens when the media is paused.
+👉 Example: update UI to show “Paused”.
+
+ended
+This event occurs when media playback reaches the end.
+👉 Example: move to the next song in a playlist.
+
+volumechange
+This event happens when the volume or mute state changes.
+👉 Example: show a volume icon update.
+
+timeupdate
+This event occurs when the playback position changes (updates frequently as media plays).
+👉 Example: update a progress bar or timer display.
+
+seeking
+This event happens when the user starts moving (seeking) to a new position in the media.
+👉 Example: show a “Loading…” indicator while seeking.
+
+seeked
+This event occurs when the user finishes moving to a new playback position.
+👉 Example: hide the “Loading…” indicator after seeking.
+
+waiting
+This event happens when playback pauses because the next frame isn’t available yet (buffering).
+👉 Example: display a buffering spinner.
+
+error
+This event happens when there’s an issue loading or playing the media.
+👉 Example: show an error message if the video file is missing.

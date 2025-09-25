@@ -1,0 +1,28 @@
+📘 Form Validation in JavaScript — Notes
+
+🔹 What is Form Validation?
+
+Form validation is the process of checking the data entered by the user before it is sent to the server.
+It helps to ensure correctness, security, and better user experience.
+
+🔹 Types of Validation
+
+Client-Side Validation
+Done in the browser using JavaScript (or HTML5 attributes).
+Immediate feedback (faster, user-friendly).
+Example: checking if an email is in the correct format before submitting.   
+
+Server-Side Validation
+Done on the server after form submission.
+More secure (prevents bypassing validation by disabling JavaScript).
+Should always be used along with client-side validation.
+
+🔹 Common Validations in JavaScript
+
+Required fields → Check if input is empty.
+Length check → Password length, username length.
+Data type check → Numbers only, letters only.
+Email format check → Using regex like /^[^\s@]+@[^\s@]+\.[^\s@]+$/.
+Password strength → Combination of uppercase, lowercase, digits, special characters.
+Confirm password → Both password fields must match.
+Number range check → Age must be between 18–60.

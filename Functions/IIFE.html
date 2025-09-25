@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        (function() {
+            var name = "IIFE Example";
+            console.log("This is an IIFE: " + name);
+            document.write("<h1>Welcome to IIFE Example</h1>");
+        })();
+
+        console.log(name); // This will throw an error because 'name' is not defined in the global scope
+        // IIFE Function Definition
+
+        // This function will execute immediately
+        // It does not pollute the global scope
+        // and can be used to encapsulate code
+        // and variables
+
+        // Advantage of IIFE
+        // - Avoids global variable pollution
+        // - Encapsulates logic
+        // - Can be used to create private variables
+        // - Can be used to execute code immediately
+
+    </script>
+</body>
+</html>

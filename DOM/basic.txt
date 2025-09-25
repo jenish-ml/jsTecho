@@ -1,0 +1,67 @@
+1. Introduction to the DOM (Document Object Model)
+
+What is it? 
+The DOM is a programming interface for HTML and XML documents. It represents the page's structure as a tree of objects (nodes).
+
+Why is it important?
+It allows programming languages (like JavaScript) to interact with the page's content, structure, and style. You can change the document's content, structure, and styling dynamically after the page has loaded.
+
+The Tree Structure: The DOM tree is made up of nodes. The document node is the root, with <html> as its child (the document element). <html> has children <head> and <body>, and so on.
+
+Element Nodes: HTML tags (e.g., <div>, <p>).
+Text Nodes: The text inside an element.
+Attribute Nodes: Attributes of an element (e.g., class, id).
+
+2. Accessing DOM Elements using JavaScript
+
+A. getElementById()
+Purpose: Selects a single element by its unique id attribute.
+Syntax: document.getElementById('idName')
+Returns: A single element object. If no element is found, it returns null.
+
+B. getElementsByClassName()
+Purpose: Selects all elements that share a given class name.
+Syntax: document.getElementsByClassName('className')
+Returns: A live HTMLCollection (an array-like object) of found elements. You can loop through it or access items by index. Returns an empty collection if none are found.
+
+C. getElementsByTagName()
+Purpose: Selects all elements with a given HTML tag name (e.g., div, p, li).
+Syntax: document.getElementsByTagName('tagName')
+Returns: A live HTMLCollection of elements.
+
+D. getElementsByName()
+Purpose: Selects elements by the value of their name attribute (commonly used for form inputs like radio buttons).
+Syntax: document.getElementsByName('name')
+Returns: A live NodeList (similar to an HTMLCollection).
+
+E. CSS Selectors (querySelector & querySelectorAll) - MODERN & POWERFUL
+querySelector(): Returns the first element that matches a given CSS-style selector.
+Syntax: document.querySelector('cssSelector')
+Example: let elem = document.querySelector('#container .item'); // ID + Class
+querySelectorAll(): Returns a static NodeList of all elements that match the given CSS selector.
+Syntax: document.querySelectorAll('cssSelector')
+Example: let allItems = document.querySelectorAll('ul li'); // All <li> in a <ul>
+Why use them? 
+They are extremely flexible and allow for very precise targeting using the same selectors you use in CSS (e.g., #id, .class, div > p, li:first-child).
+
+3. Creating and Removing Elements
+createElement(): Creates a new element node.
+Syntax: document.createElement('tagName')
+Example: let newDiv = document.createElement('div');
+appendChild() & insertBefore(): Adds the created element to the DOM tree.
+parent.appendChild(newChild): Appends the new element as the last child of parent.
+parent.insertBefore(newNode, referenceNode): Inserts newNode before the referenceNode inside the parent.
+
+removeChild(): Removes a child element from the DOM.
+Syntax: parentElement.removeChild(childElement)
+Example: document.body.removeChild(oldDiv);
+remove() (Modern Method): Removes the element itself.
+Syntax: element.remove()
+Example: oldDiv.remove(); // Simpler and more direct
+
+4. Text Content, Inner Text, Inner HTML
+textContent: Gets or sets the plain text inside an element and all its descendants. It ignores any HTML tags and is faster. It also gets hidden text (e.g., text with display: none).
+Example: element.textContent = "New Text";
+innerText: Similar to textContent but is more "aware" of styling. It does not return text from hidden elements. Its behavior can be inconsistent, so textContent is generally preferred for getting/setting plain text.
+innerHTML: Gets or sets the HTML content (including tags) inside an element. This is powerful but can be a security risk (XSS attacks) if used with user-inputted strings without proper sanitization.
+Example: element.innerHTML = '<strong>New</strong> Text'; // Renders "New" in bold

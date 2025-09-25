@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Important Multimedia Events</title>
+  <style>
+    video {
+      width: 400px;
+      border: 2px solid #333;
+      margin-bottom: 15px;
+    }
+    #log {
+      border: 1px solid #333;
+      padding: 10px;
+      max-height: 200px;
+      overflow-y: auto;
+      background: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+  <h2>🎬 Multimedia Events Demo</h2>
+
+  <video id="myVideo" controls>
+    <!-- <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4" type="video/mp4"> -->
+    Your browser does not support video.
+  </video>
+
+  <div id="log">Event log will appear here...</div>
+
+  <script>
+    const video = document.getElementById("myVideo");
+    const log = document.getElementById("log");
+
+    function logEvent(event, extra = "") {
+      log.innerHTML += `<p>📢 Event: <b>${event.type}</b> ${extra}</p>`;
+      log.scrollTop = log.scrollHeight;
+    }
+    
+    // Important events
+    video.addEventListener("play", (e) => logEvent(e, "▶️ Video started"));
+    video.addEventListener("pause", (e) => logEvent(e, "⏸️ Video paused"));
+    video.addEventListener("ended", (e) => logEvent(e, "✅ Video ended"));
+    video.addEventListener("timeupdate", (e) => logEvent(e, `⏱ Current Time: ${video.currentTime.toFixed(1)}s`));
+    video.addEventListener("volumechange", (e) => logEvent(e, `🔊 Volume: ${video.volume.toFixed(1)}, Muted: ${video.muted}`));
+    video.addEventListener("loadedmetadata", (e) => logEvent(e, `ℹ️ Duration: ${video.duration.toFixed(1)}s`));
+    video.addEventListener("seeking", (e) => logEvent(e, "⏩ Seeking..."));
+    video.addEventListener("seeked", (e) => logEvent(e, "✅ Seek complete"));
+    video.addEventListener("waiting", (e) => logEvent(e, "⏳ Buffering..."));
+    video.addEventListener("error", (e) => logEvent(e, "❌ Error loading/playing media"));
+  </script>
+</body>
+</html>

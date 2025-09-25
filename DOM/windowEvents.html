@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Window Events Practice</title>
+</head>
+<body style="width: 3000px;">
+  <h1>JavaScript Window Events</h1>
+  <p>Open the console (F12) to see event messages.</p>
+
+  <script>
+    // 1. Page fully loaded
+    window.addEventListener("load", () => {
+      alert("Page fully loaded!");
+    });
+
+    // 2. DOM ready
+    document.addEventListener("DOMContentLoaded", () => {
+      alert("DOM content loaded!");
+    });
+
+    // 3. Resize
+    window.addEventListener("resize", () => {
+      document.body.innerHTML += "<p style='backgroundcolor:green'>Window resized!</p>";
+    });
+
+    // 4. Scroll
+    window.addEventListener("scroll", () => {
+      console.log("Scrolled. X =", window.scrollX,"Scrolled. Y =", window.scrollY);
+    });
+
+    // 5. Before unload
+    window.addEventListener("beforeunload", (event) => {
+      event.preventDefault();
+      console.log("Before unload event fired.");
+    });
+
+    // 6. Focus and Blur
+    window.addEventListener("focus", () => console.log("Window focused"));
+    window.addEventListener("blur", () => console.log("Window blurred"));       
+  </script>
+
+  
+</body>
+</html>
