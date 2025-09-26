@@ -119,3 +119,7 @@ git checkout -- <filename> → Discard local changes
 
 git rm <filename> → Remove a file from repo
 git rm --cached <filename> → Remove a file from staging area
+
+9. Restore Files
+git restore --staged <filename>
+git restore <filename>

@@ -21,3 +21,11 @@ Difference between filter and map:
 - filter does not modify the original array, while map also does not modify the original array but transforms its elements.
 - map is used for transforming data, while filter is used for selecting data based on a condition.
 - map returns a new array of the same length as the original, while filter may return a shorter array if some elements do not pass the test.
+
+Difference between forEach and for:
+- forEach executes a provided function once for each element in an array.
+- for is used for iterating over a block of code a specific number of times.
+
+Difference between forEach and for...of:
+- forEach executes a provided function once for each element in an array.
+- for...of is used for iterating over iterable objects, such as arrays, strings, or maps.
