@@ -1,41 +1,24 @@
-// foreach note
+let fruits = ["Apple", "Banana", "Cherry"];
 
-// This file is used to iterate over an array or object and execute a callback function for each element.
-
-numbers = [1, 2, 3, 4, 5];
-// numbers.forEach(function(number) {
-//     console.log(number);
-// });
-
-
-numbers.forEach((num, i, arr) => {
-  arr[i] = num * 2;
+// Print each fruit
+fruits.forEach(function(fruit) {
+    console.log(fruit);
 });
 
-console.log(numbers);
+// Output:
+// Apple
+// Banana
+// Cherry
 
-
-// foreach is a method that executes a provided function once for each array element.
-
-// foreach using arrow function
-// numbers.forEach(number => console.log(number/2));
-
-// forEach can also be used with objects, but it requires converting the object into an array first.
-Object.entries({a: 1, b: 2}).forEach(function([key, value]) {
-    console.log(key, value);
+// Print each fruit with index
+fruits.forEach(function(fruit, i) {
+    console.log(`${i}: ${fruit}`);
 });
 
-// Foreach vs Map
+// Output:
+// 0: Apple
+// 1: Banana
+// 2: Cherry
 
-let nums = [1, 2, 3];
-
-// forEach (does not return)
-let doubled1 = nums.forEach(n => n * 2);
-console.log(doubled1); // undefined
-
-// map (returns new array)
-let doubled2 = nums.map(n => n * 2);
-console.log(doubled2); // [2, 4, 6]
-
-// forEach is used for executing a function on each element of an array without returning a new array.
-// map is used for transforming each element of an array and returning a new array with the transformed elements.
+// With arrow function (modern style):
+fruits.forEach(fruit => console.log(fruit));

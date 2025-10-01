@@ -1,0 +1,15 @@
+Anonymous Function in JavaScript
+
+An anonymous function is a function without a name. It’s often used when you don’t need to reuse the function elsewhere.
+
+Syntax:
+const functionName = function(parameters) {
+    // code to execute
+};
+
+Key Points:
+They have no name.
+Useful for one-time use functions.
+Common in callbacks, event handlers, and functional programming.
+Cannot be directly called by name (because they don’t have one).
+Often replaced with arrow functions for shorter syntax.

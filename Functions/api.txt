@@ -1,0 +1,6 @@
+API means Application Programming Interface
+
+It is a set of rules and protocols that allows different software applications to communicate and interact with each other.
+API can be used to access data from a server, make requests to a database, or perform other operations.
+API is often used to build web applications, mobile apps, and other software systems that need to interact with external resources.
+API can be used to access data from a server, make requests to a database, or perform other operations.

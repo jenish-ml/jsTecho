@@ -1,0 +1,66 @@
+JavaScript Objects
+
+Objects in JavaScript are collections of key-value pairs, used to store structured data.
+
+👉 Creation
+
+let obj = { name: "Jenish", age: 25 };
+let obj2 = new Object();
+obj2.name = "Jenish";
+obj2.age = 25;
+
+👉 Accessing Properties / Methods
+
+obj.name - Access property using dot notation
+obj['age'] - Access property using bracket notation
+obj.method() - Call a method of the object
+
+
+👉 Adding / Removing Properties
+
+obj.newProp = "value" - Add new property
+delete obj.age - Remove property
+
+👉 Checking Properties
+
+Object.hasOwn(obj, key) - Checks if the object has a property directly
+
+👉 Built-in Object Methods
+
+⭐ Object Inspection - Used to get information about the object.
+
+Object.keys(obj) - Returns array of property names
+Object.values(obj) - Returns array of property values
+Object.entries(obj) - Returns array of [key, value] pairs
+
+⭐ Object Merging & Copying - Used to combine objects or create new copies.
+
+Object.assign(target, source) - Copies properties from source to target
+
+⭐ Object Immutability - Methods to prevent modifications.
+
+Object.freeze(obj) → Cannot add, update, or delete properties
+Object.seal(obj) → Cannot add/delete properties, but can update existing ones
+
+⭐ Object Descriptors & Advanced - Used to control property attributes.
+
+Object.defineProperty(obj, prop, descriptor) → Define property with attributes (writable, enumerable, configurable)
+Object.getOwnPropertyDescriptor(obj, prop) → Get property attributes
+Object.getOwnPropertyDescriptors(obj) → Get all property descriptors
+
+⭐ Object Iteration - Used to loop through object properties.
+
+for (let key in obj) - Loop over properties (use hasOwnProperty to filter own properties)
+Object.entries(obj).forEach(([key, value]) => {...}) → Iterates key-value pairs
+
+
+⭐ `this` Keyword
+
+Refers to the object itself inside a method
+Arrow functions do not bind their own `this`, they use the enclosing scope
+
+
+⭐ Adding / Deleting Methods Dynamically
+
+obj.newMethod = function() { ... } - Add method dynamically
+delete obj.method - Remove method dynamically

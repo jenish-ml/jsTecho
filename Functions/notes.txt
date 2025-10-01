@@ -116,13 +116,6 @@ const notHoisted = function() {
     console.log("Not hoisted!");
 };
 
-
-Summary:
-- Functions are fundamental in JS for code reuse and organization.
-- Use function declarations, expressions, arrow functions as needed.
-- Understand scope, parameters, return values, and advanced features like callbacks and recursion.
-
-
 Features and Advantages of JavaScript Functions:
 
 Features:

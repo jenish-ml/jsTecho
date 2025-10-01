@@ -1,0 +1,65 @@
+JavaScript Looping Statements 
+
+Loops are used to repeat a block of code multiple times until a certain condition is met. Loops help avoid writing repetitive code.
+
+1. for Loop
+
+Used when the number of iterations is known.
+Has three parts:
+ - Initialization – starting value of the loop variable.
+ - Condition – loop runs while this condition is true.
+ - Increment/Decrement – updates the loop variable each iteration.
+ - Executes the block repeatedly until the condition becomes false.
+
+2. while Loop
+
+Used when the number of iterations is not known in advance.
+Executes a block of code while a condition is true.
+The condition is checked before each iteration, so it may not execute even once if false initially.
+
+3. do-while Loop
+
+Similar to while, but the block executes at least once.
+Checks the condition after executing the block.
+
+4. Nested Loops
+
+A loop inside another loop.
+Outer loop runs once, inner loop runs completely for each iteration of the outer loop.
+Useful for 2D patterns, tables, and grids.
+
+
+Difference between loops:
+- for loop is used when the number of iterations is known.
+- while loop is used when the number of iterations is not known and depends on a condition.
+- do-while loop is similar to while but guarantees at least one execution of the loop body.
+- forEach is used to iterate over arrays and objects, executing a callback function for each element.
+
+for loop 
+
+for (initialization; condition; increment/decrement) {
+    statement
+}
+
+while loop
+
+initialization
+while (condition) {
+    statement
+    increment/decrement
+}
+
+
+do-while loop
+
+initialization
+do {
+    statement
+    increment/decrement
+} while (condition);
+
+forEach loop
+
+array.forEach(function(currentValue, index, array) {
+    statement
+});

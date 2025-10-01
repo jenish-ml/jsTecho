@@ -1,0 +1,53 @@
+JavaScript Conditional Statements Notes
+
+Conditional statements allow your program to make decisions and execute certain blocks of code only if specific conditions are met.
+
+1. if Statement
+
+Used to execute a block of code only if a condition is true.
+If the condition is false, the block is skipped.
+
+Syntax: if (condition) { ... }
+
+2. if-else Statement
+
+Used to choose between two paths.
+Executes the first block if the condition is true; otherwise, executes the else block.
+
+Syntax:
+if (condition) { ... } 
+else { ... }
+
+3. if-else if-else Statement
+
+Used to check multiple conditions in sequence.
+Executes the block for the first condition that is true.
+If none of the conditions are true, the else block runs.
+
+Syntax:
+if (condition1) { ... } 
+else if (condition2) { ... } 
+else { ... }
+
+4. switch Statement
+
+Used when a variable or expression can have multiple specific values.
+Checks each case and executes the matching block.
+break prevents execution from falling through to the next case.
+default runs if no case matches.
+
+Syntax:
+switch(expression) {
+    case value1: ... break;
+    case value2: ... break;
+    default: ...
+}
+
+Key Points
+
+Conditional statements help control the flow of a program.
+
+if → Single condition
+if-else → Two alternatives
+if-else if-else → Multiple alternatives
+switch → Clean way to check specific values instead of multiple if-else statements.

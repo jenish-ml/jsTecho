@@ -1,10 +1,22 @@
-setTimeout(() => {
-    console.log("Hello, World!");
-}, 3000); // Executes after 1 second
+// Assign to a Variable
+let greet = function () {
+  console.log("Hello!");
+};
+greet(); // Output: Hello!
 
-// An anonymous function is a function without a name.
-// It can be assigned to a variable or passed as an argument to another function.
-// Examples of anonymous functions in JavaScript:
-// setTimeout(function() { ... }, 1000);
-// setInterval(function() { ... }, 5000);
-// fetch("https://api.example.com/data", function(response) { ... });   
+
+// Pass as a Callback
+setTimeout(function() {
+  console.log("Executed after 1 second");
+}, 1000);
+
+// Immediately Invoked Function Expression (IIFE)
+(function() {
+  console.log("Runs instantly");
+})();
+
+// With Array Methods
+let numbers = [1, 2, 3];
+numbers.forEach(function(num) {
+  console.log(num * 2);
+});

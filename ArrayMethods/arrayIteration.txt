@@ -1,0 +1,31 @@
+What is forEach()?
+
+It’s an Array method in JavaScript.
+Executes a callback function once for each element in the array.
+Does not return a new array (unlike map()).
+Cannot be stopped with break or return (you’d use for...of or for loop for that)
+
+What is filter()?
+ - filter method means to create a new array with all elements that pass the test implemented by the provided function.
+ - It does not change the original array.
+
+What is map()?
+ - map is a method that creates a new array populated with the results of calling a provided function on every element in the calling array.
+
+What is Reduce()?
+ - reduce is a method that executes a reducer function (that you provide) on each element of the array, resulting in a single output value.
+ - It can be used to sum numbers, concatenate strings, or perform any operation that reduces an
+
+Difference between filter and map:
+- filter creates a new array with elements that pass the test, while map creates a new array with the results of calling a function on every element.
+- filter does not modify the original array, while map also does not modify the original array but transforms its elements.
+- map is used for transforming data, while filter is used for selecting data based on a condition.
+- map returns a new array of the same length as the original, while filter may return a shorter array if some elements do not pass the test.
+
+Difference between forEach and for:
+- forEach executes a provided function once for each element in an array.
+- for is used for iterating over a block of code a specific number of times.
+
+Difference between forEach and for...of:
+- forEach executes a provided function once for each element in an array.
+- for...of is used for iterating over iterable objects, such as arrays, strings, or maps.

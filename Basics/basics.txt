@@ -1,0 +1,169 @@
+⭐ Introduction to JavaScript
+
+JavaScript (JS) is a high-level, interpreted programming language used to make web pages interactive.
+It is a client-side language (runs in browser) but can also run on the server using Node.js.
+JavaScript can manipulate HTML elements, CSS styles, and respond to user events.
+
+⭐ Types of JavaScript Scripts
+
+JavaScript can be added to HTML in three ways:
+
+1. Inline Script
+
+JS code is written directly inside an HTML element using the on-event attribute.
+Example: <button onclick="alert('Hello')">Click Me</button>
+Use case: Simple small scripts attached to an element.
+Limitation: Not suitable for large scripts; mixes HTML with JS.
+
+2. Internal Script
+
+JS code is written inside <script> tags in the HTML file.
+Placed usually in <head> or <body>.
+Example:
+<script>
+    alert("Hello, World!");
+</script>
+Use case: When JS is only needed for a single HTML page.
+
+3. External Script
+
+JS code is written in a separate .js file and linked to HTML using <script src="filename.js"></script>.
+Example:
+<script src="script.js"></script>
+Use case: Best practice for large scripts; allows code reuse across pages.
+
+⭐ Displaying Output in JavaScript
+
+JavaScript provides multiple ways to display output:
+
+👉 alert() → Shows a pop-up message.
+alert("Hello World");
+
+👉 console.log() → Shows output in browser console (useful for debugging).
+console.log("Hello World");
+
+👉 document.write() → Writes directly to the HTML document.
+document.write("Hello World");
+
+👉 innerHTML → Updates the content of HTML elements dynamically.
+document.getElementById("demo").innerHTML = "Hello World";
+
+⭐ Variables in JavaScript
+Variables are containers used to store data.
+
+Rules for Naming Variables: 
+ - Must begin with a letter, _, or $.
+ - Cannot start with a number.
+ - Cannot use JavaScript reserved keywords (like if, for, while).
+ - Case-sensitive (name ≠ Name).
+
+Declaration Keywords
+
+👉 var
+Oldest way to declare variables.
+Function-scoped.
+Can be redeclared and updated.
+
+👉 let
+
+Introduced in ES6.
+Block-scoped.
+Can be updated but cannot be redeclared in the same scope.
+
+👉 const
+
+Introduced in ES6.
+Block-scoped.
+Cannot be updated or redeclared; used for constants.
+
+Datatypes in jS
+⭐ Primitive Datatypes
+1. Number - Represents numeric values (both integer and floating-point). Also includes special values Infinity, -Infinity, and NaN.
+2. String - Sequence of characters.
+3. Boolean - Logical value true or false.
+4. null - Special value meaning “no value”. It’s a primitive.
+5. undefined - Variable declared but not assigned a value.
+6. Symbol - Unique and immutable value used as object property keys.
+7. BigInt - Represents integers of arbitrary length.
+
+⭐ Non-Primitive Datatypes - (All non-primitive values are objects.)
+8. Object - Collection of key-value pairs.
+9. Array - Actually an object with numeric keys and special methods.
+10. Function - Special kind of object that is callable.
+11. Date - Built-in object to work with dates and times.
+12. NaN - “Not a Number” – actually a special Number value, not its own type.
+
+Operators in JavaScript
+
+Opeartors are used to perform operations on variables and values.
+
+Arithmetic Operators in JavaScript 
++ - Addition
+- - Subtraction
+* - Multiplication
+/ - Division
+% - Modulus (Remainder)
+** - Exponentiation
+++ - Increment
+-- - Decrement
+
+Assignment Operators in JavaScript
+= - Assigns a value
++= - Adds and assigns
+-= - Subtracts and assigns
+*= - Multiplies and assigns
+/= - Divides and assigns
+%= - Modulus and assigns
+**= - Exponentiation and assigns
+
+Comparison operators in JavaScript  (True or False)
+== - Equal to
+=== - Strictly equal to (checks value and type)
+!= - Not equal to
+!== - Strictly not equal to (checks value and type)
+> - Greater than
+< - Less than
+>= - Greater than or equal to
+<= - Less than or equal to
+
+Logical Operators in JavaScript
+&& - Logical AND (true if both operands are true)
+|| - Logical OR (true if at least one operand is true)
+! - Logical NOT (inverts the truth value)
+
+Bitwise Operators in JavaScript
+& - Bitwise AND
+| - Bitwise OR
+^ - Bitwise XOR (exclusive OR)
+~ - Bitwise NOT (inverts bits)
+<< - Bitwise left shift
+>> - Bitwise right shift
+>>> - Bitwise unsigned right shift
+
+Ternary Operator in JavaScript
+condition ? expressionIfTrue : expressionIfFalse
+
+Typeof Operator in JavaScript
+typeof variable - Returns the type of a variable as a string
+
+Spread and Rest Operators: 
+• Spread (...) - Used to split array elements or object properties. 
+• Rest (...) - Collects remaining elements into a single array. 
+
+Instanceof Operator in JavaScript
+object instanceof constructor - Checks if an object is an instance of a specific constructor
+
+Conditional Statements in JavaScript
+
+- if statement
+- if - else statement
+- if - else if - else statement
+- switch statement
+
+What is the Spread Operator?
+
+It expands (spreads) elements of an iterable (like array, string, object) into individual elements.
+
+What’s the difference between Spread and Rest operators?
+
+Both use the same syntax ..., but Spread is used to unpack or expand elements (e.g., copying arrays, merging objects, passing arguments), while Rest is used to collect multiple elements into a single array or object (e.g., handling variable function arguments, array/object destructuring). In short: Spread expands, Rest collects.
