@@ -1,0 +1,34 @@
+JavaScript Inheritance
+
+Inheritance is a mechanism that allows one object or class to acquire properties and methods of another. It is fundamental in object-oriented programming (OOP) and helps reusability and code organization.
+
+1. Concept of Inheritance
+
+The object or class that provides properties/methods is called the Parent / Superclass / Base class.
+The object or class that inherits is called the Child / Subclass / Derived class.
+Child classes can access or override properties and methods of the parent.
+
+2. Types of Inheritance in JavaScript
+
+a - Prototypal Inheritance
+Every JavaScript object has a prototype object.
+Child objects inherit properties and methods from the parent’s prototype.
+
+Example:
+If object child does not have a property, JS looks in child.__proto__ (parent object) to find it.
+
+b - Class-based Inheritance (ES6)
+
+Introduced in ES6 using class and extends.
+Child class inherits from a parent class using the extends keyword.
+super() is used in the child class to call the parent constructor.
+
+Key Points:
+Classes provide syntactic sugar over prototypal inheritance.
+You can override methods in the child class.
+
+3. Advantages of Inheritance
+
+Code Reusability – Write common methods in parent class, reuse in child classes.
+Extensibility – Easy to extend functionality without modifying parent class.
+Organization – Keeps code clean and organized in a hierarchy.
